@@ -383,7 +383,8 @@ module I = struct
 
     let create () =
       let img, line, attr = ref empty, ref empty, ref [] in
-      let fmt = formatter_of_out_functions {
+      let default = pp_get_formatter_out_functions (formatter_of_buffer (Buffer.create 0)) () in
+      let fmt = formatter_of_out_functions { default with
           out_flush = (fun () ->
             img := !img <-> !line; line := empty; attr := [])
         ; out_newline = (fun () ->

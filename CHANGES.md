@@ -1,3 +1,7 @@
+## Unreleased
+
+* Fix formatter construction with OCaml 5.4 and later.
+
 ## v0.2.3 (2022-09-02)
 
 * Moved to Dune.
